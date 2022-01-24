@@ -195,8 +195,8 @@ export default createStore({
       this.commit("logout");
       router.go("/topics");
     },
-    getPostsFromUser(userId) {
-      axios.get("/posts/" + userId).then((response) => {
+    getPostsFromUser(context, username) {
+      axios.get("/user/" + username + "/posts").then((response) => {
         if (response.status == 200) {
           this.commit("setPosts", response.data);
         } else {
@@ -204,8 +204,8 @@ export default createStore({
         }
       });
     },
-    getCommentsFromUser(userId) {
-      axios.get("/comments/" + userId).then((response) => {
+    getCommentsFromUser(context, username) {
+      axios.get("/user/" + username + "/comments").then((response) => {
         if (response.status == 200) {
           this.commit("setComments", response.data);
         } else {

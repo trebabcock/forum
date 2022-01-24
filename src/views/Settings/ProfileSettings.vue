@@ -80,14 +80,14 @@
         <span class="text-2xl mb-2">Change Bio</span>
         <textarea
           class="p-4 w-full bg-slate-700 mb-2 hover:bg-slate-600 rounded-lg outline-none focus:bg-slate-600 shadow-lg flex flex-grow"
-          :placeholder="this.user.public_user.bio"
+          :placeholder="userBio"
           v-model="bio"
           id="bio"
         ></textarea>
         <div class="w-full flex justify-end space-x-4">
           <button
             class="flex rounded-lg shadow-lg px-4 py-2 bg-slate-700 hover:bg-slate-600 text-slate-50"
-            @click="doThing"
+            @click="saveBio"
           >
             Save
           </button>
@@ -203,6 +203,9 @@ export default {
     },
     avSource() {
       return this.avatarSource;
+    },
+    userbio() {
+      return this.bio;
     },
   },
 };

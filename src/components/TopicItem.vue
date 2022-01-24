@@ -6,28 +6,34 @@
       class="flex flex-grow items-center py-2 px-2 truncate h-full cursor-pointer"
       @click="toPost"
     >
-      <span class="text-xl font-bold">{{ board.name }}</span>
+      <div class="w-full truncate flex flex-col">
+        <span class="text-xl font-bold">{{ board.name }}</span>
+        <span class="text-xs text-slate-500 truncate">
+          {{ board.description }}
+        </span>
+      </div>
     </div>
-    <div v-if="lastPost.date_time" class="border-r border-slate-500 p-2">
+    <div
+      v-if="lastPost.date_time"
+      class="border-r border-slate-500 p-2 flex-shrink-0"
+    >
       <span class="text-sm">Posts: {{ lastPost.count }}</span>
     </div>
-    <div v-else class="border-r border-slate-500 p-2">
+    <div v-else class="border-r border-slate-500 p-2 flex-shrink-0">
       <span class="text-sm">Posts: 0</span>
     </div>
     <div
       v-if="lastPost.date_time"
-      class="w-40 p-2 break-normal overflow-hidden text-xs text-center max-h-full"
+      class="w-40 p-2 break-normal overflow-hidden text-xs text-center max-h-full flex-shrink-0"
     >
       {{ time }} by
       <router-link :to="getRoute" class="text-slate-300">
-        {{
-        lastPost.author
-        }}
+        {{ lastPost.author }}
       </router-link>
     </div>
     <div
       v-else
-      class="w-40 p-2 break-normal overflow-hidden text-xs max-h-full flex items-center justify-center"
+      class="w-40 p-2 break-normal overflow-hidden text-xs max-h-full flex items-center justify-center flex-shrink-0"
     >
       <span>No Posts</span>
     </div>
@@ -35,7 +41,7 @@
 </template>
 
 <script>
-import moment from 'moment';
+import moment from "moment";
 
 export default {
   name: "TopicItem",

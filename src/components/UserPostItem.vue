@@ -9,12 +9,10 @@
       <div class="w-full truncate flex flex-col">
         <span class="text-xl font-bold">{{ post.title }}</span>
         <span class="text-xs text-slate-500">
-          Posted {{ time }} by
-          <router-link
-            :to="'/user/' + postAuthor.username"
-            class="text-slate-400"
-            >{{ postAuthor.username }}</router-link
-          >
+          Posted {{ time }} in
+          <router-link :to="'/board/' + board.id" class="text-slate-400 z-40">{{
+            board.name
+          }}</router-link>
         </span>
       </div>
     </div>
@@ -49,14 +47,14 @@
 import moment from "moment";
 
 export default {
-  name: "PostItem",
+  name: "UserPostItem",
   props: {
     post: {},
   },
   data() {
     return {
       lastComment: {},
-      postAuthor: "",
+      board: {},
     };
   },
   mounted() {
@@ -69,9 +67,9 @@ export default {
           console.log(response);
         }
       });
-    this.axios.get("/user/fromPost/" + this.post.id).then((response) => {
+    this.axios.get("/board/fromPost/" + this.post.id).then((response) => {
       if (response.status == 200) {
-        this.postAuthor = response.data;
+        this.board = response.data;
       } else {
         console.log(response);
       }

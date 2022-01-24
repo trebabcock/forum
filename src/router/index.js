@@ -32,7 +32,7 @@ const routes = [
             next("/login");
           }
         },
-        redirect: "/settings/general",
+        redirect: "/settings/profile",
         component: () => import("@/views/Settings/Settings.vue"),
         children: [
           {

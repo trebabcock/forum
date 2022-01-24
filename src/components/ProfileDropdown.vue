@@ -5,12 +5,12 @@
     <Menu as="div" class="relative inline-block text-left w-full h-full">
       <div class="w-full h-full">
         <MenuButton
-          class="inline-flex space-x-4 justify-center w-full p-4 text-sm font-medium hover:bg-slate-600 hover:shadow-lg rounded-lg"
+          class="inline-flex space-x-2 justify-center w-full p-4 text-sm font-medium hover:bg-slate-600 hover:shadow-lg rounded-lg"
         >
           <span class="text-lg font-bold">{{ user.username }}</span>
           <div class="w-7 h-7 rounded-full">
             <img
-              class="object-fill rounded-full"
+              class="object-cover rounded-lg"
               :src="this.user.public_user.avatar_url"
             />
           </div>
