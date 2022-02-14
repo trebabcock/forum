@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+# Forum
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a general purpose forum. It is currently a work in progress, but it is almost usable!
 
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## Screenshots
+![Screenshot](screenshots/screenshot1.png)
+![Screenshot](screenshots/screenshot2.png)
+![Screenshot](screenshots/screenshot3.png)
+![Screenshot](screenshots/screenshot4.png)
+![Screenshot](screenshots/screenshot5.png)
+![Screenshot](screenshots/screenshot6.png)
+![Screenshot](screenshots/screenshot7.png)
+![Screenshot](screenshots/screenshot8.png)
+![Screenshot](screenshots/screenshot9.png)
+![Screenshot](screenshots/screenshot10.png)
